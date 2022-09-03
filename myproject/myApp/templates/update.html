@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Data</title>
+</head>
+<body>
+    <h1>Update Employee</h1>
+    <form action="updaterecord/{{ employee.id }}" method="post">
+        {% csrf_token %}
+        First Name:<br>
+        <input name="first" value="{{ employee.firstname }}">
+        <br><br>
+        Last Name:<br>
+        <input name="last" value="{{ employee.lastname }}">
+        <br><br>
+        Age:<br>
+        <input name="age" value="{{ employee.age }}">
+        <br><br>
+        Qualification:<br>
+        <input name="qualification" value="{{ employee.qualification }}">
+        <br><br>
+        College Name:<br>
+        <input name="college" value="{{ employee.college }}">
+        <br><br>
+        City:<br>
+        <input name="city" value="{{ employee.city }}">
+        <br><br>
+        Date:<br>
+        <input name="date" value="{{ employee.date }}" type="date">
+        <br><br>
+        <input type="submit" value="Submit">
+        </form>
+</body>
+</html>

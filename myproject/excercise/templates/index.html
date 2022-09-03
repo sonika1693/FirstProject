@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise</title>
+</head>
+<body>
+    <h1>Enter Text</h1>
+    <form method="get" action="/excercise">
+        {% csrf_token %}
+        <textarea name="data"></textarea><br><br>
+        <input type="checkbox" name="upper_case"><label>Upper Case</label>
+        <input type="submit" value="Submit">
+    </form><br><br>
+    <label>Upper case: {{ uppercase_data }}</label><br><br>
+    <label>Length is: {{ length }}</label>
+</body>
+</html>

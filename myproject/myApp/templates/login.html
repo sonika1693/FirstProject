@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+</head>
+<body>
+    <h1>User Login Form</h1>
+    <form action="/login/" method="post">
+        {% csrf_token %}
+        Username:<br>
+        <input type="text" name="username" required>
+        <br><br>
+        Password:<br>
+        <input name="password" type="password" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>  
+    <br>
+    <br>
+    <span>Forgot Password: <a href="/forget_password">Click</a></span> <br><br>
+    <span>Go Back for registeration <a href="/">Click</a></span> 
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">
+            X
+            </button>
+            <strong>{{message}}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
